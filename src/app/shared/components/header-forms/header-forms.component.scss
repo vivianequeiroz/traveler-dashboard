@@ -1,0 +1,28 @@
+.header {
+  width: 900px;
+  height: 400px;
+  background: blue;
+  display: flex;
+  flex-direction: row;
+
+  .stepNumber {
+    width: 4rem;
+    height: 4rem;
+    background: #51b853;
+    margin: 2.5rem;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.125rem;
+  }
+
+  .green-text {
+    color: #51b853;
+  }
+
+  .red-text {
+    color: #f25d27;
+  }
+}
