@@ -4,10 +4,10 @@ import { CreateProfileFormsComponent } from './views/create-profile-forms/create
 import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
-    path: 'create-profile',
+    path: 'createProfile',
     component: CreateProfileFormsComponent,
   },
 ];
