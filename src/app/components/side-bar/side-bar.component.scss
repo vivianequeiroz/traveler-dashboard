@@ -1,0 +1,65 @@
+.main-container {
+  max-width: 6rem;
+  height: 100vh;
+  background: #f25d27;
+
+  .wrapper {
+    padding: 2.5rem;
+  }
+
+  .logo:hover {
+    cursor: pointer;
+  }
+  .menus-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 20vh;
+    padding: 30vh 0 30vh 0;
+
+    .menu {
+      padding: 1rem 0 1rem 0;
+    }
+
+    .menu:hover {
+      cursor: pointer;
+    }
+
+    .logout-container {
+      margin-top: 15rem;
+    }
+  }
+
+  // @media (min-width: 20rem) {
+  //   /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+  //   .wrapper {
+  //     padding: 2rem;
+  //   }
+  //   .menus-container {
+  //     max-height: 10vh;
+  //     padding: 5vh 0 5vh 0;
+
+  //     .menu {
+  //       padding: 0.8rem 0 0.8rem 0;
+  //     }
+
+  //     .logout-container {
+  //       margin-top: 0.2rem;
+  //     }
+  //   }
+  // }
+  // @media (min-width: 30rem) {
+  //   /* smartphones, Android phones, landscape iPhone */
+  // }
+  // @media (min-width: 37.5rem) {
+  //   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  // }
+  // @media (min-width: 50.0625rem) {
+  //   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  // }
+  // @media (min-width: 64.0625rem) {
+  //   /* big landscape tablets, laptops, and desktops */
+  // }
+  // @media (min-width: 80.0625rem) {
+  //   /* hi-res laptops and desktops */
+  // }
+}
