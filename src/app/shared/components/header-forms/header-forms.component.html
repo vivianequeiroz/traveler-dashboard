@@ -2,7 +2,7 @@
   <div class="stepNumber">
     <p>{{ stepNumber }}</p>
   </div>
-  <h1 ngClass="stepNumber.length > 0 ? 'green-text' : 'red-text'">
+  <h1 [ngClass]="stepNumber.length > 0 ? 'green-text' : 'red-text'">
     {{ headerText }}
   </h1>
 </div>
