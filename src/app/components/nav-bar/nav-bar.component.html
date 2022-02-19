@@ -1,0 +1,37 @@
+<div class="nav main-container">
+  <ul class="nav-options">
+    <li>
+      <div *ngIf="citiesPage; else profile" class="cities">Cidades</div>
+    </li>
+    <li>
+      <ng-template #profile>
+        <div class="return-button">
+          <button class="return">
+            <img src="../../../assets/svgs/return.svg" alt="Return" />
+          </button>
+        </div>
+      </ng-template>
+    </li>
+
+    <li *ngIf="cityProfile || placeProfile" class="edit-delete">
+      <div class="edit-delete-container">
+        <div class="edit">
+          <button class="edit">
+            <img src="../../../assets/svgs/edit.svg" alt="Edit" />
+          </button>
+        </div>
+        <div class="delete">
+          <button class="delete">
+            <img src="../../../assets/svgs/delete.svg" alt="Delete" />
+          </button>
+        </div>
+      </div>
+    </li>
+
+    <li *ngIf="addProfile" class="profile">
+      <div class="add-profile">
+        <button class="add-profile">+ Adicionar um perfil</button>
+      </div>
+    </li>
+  </ul>
+</div>
