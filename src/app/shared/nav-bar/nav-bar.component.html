@@ -30,7 +30,7 @@
 
     <li *ngIf="addProfile" class="profile">
       <div class="add-profile">
-        <button class="add-profile" routerLink="/create-profile">
+        <button class="add-profile" (click)="goToCreateProfile()">
           + Adicionar um perfil
         </button>
       </div>
