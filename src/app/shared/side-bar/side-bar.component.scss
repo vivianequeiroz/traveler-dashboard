@@ -2,6 +2,7 @@
   max-width: 6rem;
   height: 100vh;
   background: #f25d27;
+  position: relative;
 
   .wrapper {
     padding: 2.5rem;
@@ -17,7 +18,7 @@
     padding: 30vh 0 30vh 0;
 
     .menu {
-      padding: 2.5rem 0 2.5rem 0;
+      padding: 1rem 0 1rem 0;
     }
 
     .menu:hover {
@@ -51,15 +52,23 @@
   //   /* smartphones, Android phones, landscape iPhone */
   // }
   // @media (min-width: 37.5rem) {
-  //   /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  //     .menu {
+  //       padding: 1rem 0 1rem 0;
+  //
   // }
   // @media (min-width: 50.0625rem) {
-  //   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  //      .menu {
+  //       padding: 1.5rem 0 1.5rem 0;
+  //
   // }
   // @media (min-width: 64.0625rem) {
-  //   /* big landscape tablets, laptops, and desktops */
+  //    //     .menu {
+  //       padding: 2rem 0 2rem 0;
+  //
   // }
   // @media (min-width: 80.0625rem) {
-  //   /* hi-res laptops and desktops */
+  //    //     .menu {
+  //       padding: 2.5rem 0 2.5rem 0;
+  //     }
   // }
 }
