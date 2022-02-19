@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+import { ViewsModule } from './views/views.module';
+import { HeaderFormsComponent } from './shared/components/header-forms/header-forms.component';
 import { AppComponent } from './app.component';
-import { SideBarComponent } from './shared/side-bar/side-bar.component';
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
-import { AddProfileFormsComponent } from './views/add-profile-forms/add-profile-forms.component';
-import { CreateProfileFormsComponent } from './views/create-profile-forms/create-profile-forms.component';
 
 @NgModule({
-  declarations: [AppComponent, SideBarComponent, NavBarComponent, AddProfileFormsComponent, CreateProfileFormsComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, ViewsModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [HeaderFormsComponent],
 })
 export class AppModule {}
