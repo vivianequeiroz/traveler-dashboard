@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header-forms',
@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderFormsComponent implements OnInit {
   @Input() stepNumber: string = '';
   @Input() headerText: string = '';
-  constructor() {}
+  constructor(private element: ElementRef) {}
 
   ngOnInit(): void {}
 }

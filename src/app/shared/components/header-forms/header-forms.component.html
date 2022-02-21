@@ -1,8 +1,14 @@
-<div class="header">
-  <div class="stepNumber">
-    <p>{{ stepNumber }}</p>
+<div class="container">
+  <div [ngClass]="stepNumber.length <= 0 ? 'header-edit' : 'header-add'">
+    <div
+      [ngClass]="stepNumber.length <= 0 ? 'remove-step-number' : 'step-number'"
+    >
+      <p>{{ stepNumber }}</p>
+    </div>
+    <div class="header-text">
+      <h1 [ngClass]="stepNumber.length > 0 ? 'green-text' : 'red-text'">
+        {{ headerText }}
+      </h1>
+    </div>
   </div>
-  <h1 [ngClass]="stepNumber.length > 0 ? 'green-text' : 'red-text'">
-    {{ headerText }}
-  </h1>
 </div>
