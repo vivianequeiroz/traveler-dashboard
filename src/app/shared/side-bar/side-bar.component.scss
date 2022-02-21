@@ -1,8 +1,9 @@
 .main-container {
   max-width: 6rem;
-  height: 100vh;
+  height: 110vh;
   background: #f25d27;
-  position: relative;
+  position: fixed;
+  top: 0;
 
   .wrapper {
     padding: 2.5rem;

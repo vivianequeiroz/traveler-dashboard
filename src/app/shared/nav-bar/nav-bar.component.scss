@@ -3,7 +3,8 @@
   width: 100%;
   height: 6rem;
   padding: 0 6rem 0 6rem;
-  position: absolute;
+  position: fixed;
+  top: 0;
 
   .nav-options {
     display: flex;
@@ -33,6 +34,10 @@
 
   .return:hover {
     cursor: pointer;
+  }
+
+  .profile {
+    margin-top: 0.3em;
   }
 
   .add-profile {
