@@ -1,69 +1,74 @@
-.container {
-  background: #ffffff;
-  width: 48rem;
-  height: 9rem;
-  margin: 0 auto;
-  border-radius: 0.625rem 0.625rem 0 0;
+.main-container {
+  padding-top: 8rem;
+  background: blue;
 
-  .header-add,
-  .header-edit {
+  .wrapper {
+    background: #ffffff;
+    width: 48rem;
+    height: 9rem;
+    margin: 0 auto;
     border-radius: 0.625rem 0.625rem 0 0;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-  }
 
-  .header-add {
-    background: linear-gradient(
-      90deg,
-      #f5fff5 0%,
-      rgba(220, 245, 221, 0) 62.99%
-    );
-  }
+    .header-add,
+    .header-edit {
+      border-radius: 0.625rem 0.625rem 0 0;
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+    }
 
-  .header-edit {
-    background: linear-gradient(
-      90deg,
-      #fef7f5 0%,
-      rgba(254, 247, 245, 0) 62.99%
-    );
-  }
+    .header-add {
+      background: linear-gradient(
+        90deg,
+        #f5fff5 0%,
+        rgba(220, 245, 221, 0) 62.99%
+      );
+    }
 
-  .step-number {
-    width: 4rem;
-    height: 4rem;
-    background: #51b853;
-    margin: 2.5rem;
-    border: none;
-    border-radius: 0.625rem;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 2.125rem;
-    text-align: center;
-  }
+    .header-edit {
+      background: linear-gradient(
+        90deg,
+        #fef7f5 0%,
+        rgba(254, 247, 245, 0) 62.99%
+      );
+    }
 
-  .header-text {
-    margin-top: 2rem;
-  }
+    .step-number {
+      width: 4rem;
+      height: 4rem;
+      background: #51b853;
+      margin: 2.5rem;
+      border: none;
+      border-radius: 0.625rem;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 2.125rem;
+      text-align: center;
+    }
 
-  h1 {
-    font-weight: 600;
-    font-size: 2.25rem;
-    line-height: 2.125rem;
-    text-align: center;
-  }
+    .header-text {
+      margin-top: 2rem;
+    }
 
-  .green-text {
-    color: #51b853;
-  }
+    h1 {
+      font-weight: 600;
+      font-size: 2.25rem;
+      line-height: 2.125rem;
+      text-align: center;
+    }
 
-  .red-text {
-    margin-left: 2.5rem;
-    color: #f25d27;
-  }
+    .green-text {
+      color: #51b853;
+    }
 
-  .remove-step-number {
-    display: none;
+    .red-text {
+      margin-left: 2.5rem;
+      color: #f25d27;
+    }
+
+    .remove-step-number {
+      display: none;
+    }
   }
 }
