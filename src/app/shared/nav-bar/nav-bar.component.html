@@ -1,7 +1,7 @@
 <div class="nav main-container">
   <ul class="nav-options">
     <li>
-      <div *ngIf="citiesPage; else profile" class="cities">Cidades</div>
+      <div *ngIf="isCitiesPage; else profile" class="cities">Cidades</div>
     </li>
     <li>
       <ng-template #profile>

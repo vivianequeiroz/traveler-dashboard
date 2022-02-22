@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  @Output() citiesPage: boolean = true;
-  @Output() addProfile: boolean = true;
+  @Input() isCitiesPage!: boolean;
+  @Input() addProfile: boolean = true;
   @Output() cityProfile: boolean = false;
   @Output() placeProfile: boolean = false;
 

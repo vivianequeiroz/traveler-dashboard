@@ -1,6 +1,5 @@
 .main-container {
   padding-top: 8rem;
-  background: blue;
 
   .wrapper {
     background: #ffffff;
@@ -14,7 +13,7 @@
       border-radius: 0.625rem 0.625rem 0 0;
       display: flex;
       flex-direction: row;
-      position: absolute;
+      // position: absolute;
     }
 
     .header-add {
@@ -48,7 +47,7 @@
     }
 
     .header-text {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
     h1 {
