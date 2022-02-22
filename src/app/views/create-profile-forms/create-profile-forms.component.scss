@@ -1,3 +1,145 @@
-.container {
-  padding-top: 8rem;
+.main-container {
+  width: 55rem;
+  height: 60.5rem;
+  margin: 0 auto;
+  padding: 0 0 22rem 0;
+}
+
+.city-forms-container {
+  background: #ffffff;
+  width: 48rem;
+  height: 58rem;
+  margin: 0 auto;
+  padding: 0.001rem;
+
+  .wrapper {
+    padding: 2rem 2.5rem;
+    color: #617480;
+
+    h2 {
+      font-weight: 500;
+      font-size: 1.5rem;
+      line-height: 1.875rem;
+      color: #123952;
+    }
+
+    .separator {
+      width: 672px;
+      height: 0px;
+      left: 432px;
+      top: 382px;
+      border: 1px solid #dce2e6;
+      margin-bottom: 1.5rem;
+    }
+
+    .label {
+      font-size: 1rem;
+      line-height: 1.375rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      font-size: 1.2rem;
+      text-align: left;
+      color: #123951;
+    }
+
+    .input-container {
+      margin-bottom: 2rem;
+    }
+
+    #cityName {
+      width: 42rem;
+      height: 3.5rem;
+      left: 27rem;
+      top: 27.375rem;
+      background: #f5f8fa;
+      border: 0.0625rem solid #dce2e6;
+      box-sizing: border-box;
+      border-radius: 0.625rem;
+      margin-top: 1rem;
+    }
+
+    #cityPhoto {
+      width: 42rem;
+      height: 10rem;
+      left: 27rem;
+      top: 34.375rem;
+
+      background: #f5f8fa;
+
+      border: 0.125rem dashed #dce2e6;
+      box-sizing: border-box;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      cursor: pointer;
+      text-align: center;
+
+      color: #f25d27;
+    }
+
+    #cityDescription {
+      width: 42rem;
+      height: 12.625rem;
+      left: 27rem;
+      background: #f5f8fa;
+      border: 0.0625rem solid #dce2e6;
+      box-sizing: border-box;
+      border-radius: 0.625rem;
+      margin-top: 1rem;
+    }
+
+    .max-length {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 1rem 1rem;
+      p {
+        font-size: 0.9rem;
+        color: #a0acb3;
+        margin-top: -1.5rem;
+        margin-right: 1rem;
+      }
+    }
+    .wrapper-footer-forms {
+      display: flex;
+      flex-direction: row;
+      margin-top: 3.5rem;
+      justify-content: space-between;
+
+      .cautious-container {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .alert-icon {
+        margin-top: 0.8rem;
+      }
+
+      .alert-message {
+        width: 8rem;
+        height: 2.75rem;
+        margin-left: 1.5rem;
+      }
+
+      .next-step {
+        align-items: center;
+        padding: 0.75rem 2rem;
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.625rem;
+        width: 7.8125rem;
+        height: 3rem;
+        margin-right: 1rem;
+        background: #115d8c;
+        border-radius: 10px;
+        border: none;
+      }
+    }
+  }
 }
