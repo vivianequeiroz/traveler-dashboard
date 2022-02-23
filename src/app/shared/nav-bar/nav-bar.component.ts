@@ -19,5 +19,12 @@ export class NavBarComponent implements OnInit {
   goToCreateProfile(): void {
     console.log('teste routing');
     this.router.navigate(['/createProfile']);
+    this.addProfile = false;
+  }
+
+  goToHome(): void {
+    console.log('Teste go home');
+    this.router.navigate(['/home']);
+    this.addProfile = true;
   }
 }
