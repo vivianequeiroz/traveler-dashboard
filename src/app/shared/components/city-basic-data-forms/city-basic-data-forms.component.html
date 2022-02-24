@@ -21,14 +21,13 @@
       <div class="input-container">
         <label class="label">City photo</label>
         <div class="city-photo-input">
-          <button
+          <input
             class="form-control"
             id="cityPhoto"
             type="text"
             formControlName="cityPhoto"
-          >
-            + Add a photo
-          </button>
+            placeholder="+ Add a photo"
+          />
         </div>
         <!-- <span class="invalid-feedback">
             {{ displayMessage.cityName }}
@@ -60,7 +59,7 @@
           <div class="alert-message">Be careful fulfilling information.</div>
         </div>
         <div class="next-btn-container">
-          <button class="next-step">Next</button>
+          <button (click)="saveCity()" class="next-step">Next</button>
         </div>
       </div>
     </form>

@@ -1,5 +1,8 @@
+import { CityService } from './../../../services/city/city-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { City } from 'src/app/models/City';
 
 @Component({
   selector: 'app-city-basic-data-forms',
@@ -8,9 +11,15 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class CityBasicDataFormsComponent implements OnInit {
   cityForm!: FormGroup;
+
+  city!: City;
+
   formsTitle: string = 'City information';
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private cityService: CityService
+  ) {}
 
   ngOnInit(): void {
     this.buildCityForm();
@@ -18,9 +27,18 @@ export class CityBasicDataFormsComponent implements OnInit {
 
   buildCityForm() {
     this.cityForm = this.formBuilder.group({
-      cityName: 'Test',
+      cityName: '',
       cityPhoto: '',
       cityDescription: '',
     });
+  }
+
+  saveCity(): void {
+    const city = { ...this.city, ...this.cityForm.value };
+
+    this.cityService
+      .createCity(city)
+      .subscribe((response) => console.log(response));
+    console.log(city);
   }
 }
