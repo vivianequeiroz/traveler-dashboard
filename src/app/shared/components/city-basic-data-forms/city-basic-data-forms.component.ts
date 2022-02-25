@@ -15,6 +15,7 @@ export class CityBasicDataFormsComponent implements OnInit {
   city!: City;
 
   formsTitle: string = 'City information';
+  subscription!: Subscription;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -36,9 +37,13 @@ export class CityBasicDataFormsComponent implements OnInit {
   saveCity(): void {
     const city = { ...this.city, ...this.cityForm.value };
 
-    this.cityService
+    this.subscription = this.cityService
       .createCity(city)
       .subscribe((response) => console.log(response));
     console.log(city);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
