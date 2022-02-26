@@ -1,7 +1,7 @@
 <div class="nav main-container">
   <ul class="nav-options">
     <li>
-      <div *ngIf="isCitiesPage; else profile" class="cities">Cidades</div>
+      <div *ngIf="isCitiesPage; else profile" class="cities">Cities</div>
     </li>
     <li>
       <ng-template #profile>
@@ -12,6 +12,15 @@
         </div>
       </ng-template>
     </li>
+
+    <div class="page-title">
+      <p>{{ pageTitle }}</p>
+    </div>
+
+    <div *ngIf="firstStepForms" class="step-number">
+      <span [ngClass]="firstStepForms ? 'firstStep' : ''">01 - </span>
+      <span>02 </span>
+    </div>
 
     <li *ngIf="cityProfile || placeProfile" class="edit-delete">
       <div class="edit-delete-container">
@@ -31,7 +40,7 @@
     <li *ngIf="addProfile" class="profile">
       <div class="add-profile">
         <button class="add-profile" (click)="goToCreateProfile()">
-          + Adicionar um perfil
+          + Add a profile
         </button>
       </div>
     </li>

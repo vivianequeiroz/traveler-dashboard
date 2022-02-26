@@ -11,20 +11,26 @@ export class NavBarComponent implements OnInit {
   @Input() addProfile: boolean = true;
   @Output() cityProfile: boolean = false;
   @Output() placeProfile: boolean = false;
+  @Output() pageTitle: string = '';
+  @Output() firstStepForms!: boolean;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   goToCreateProfile(): void {
-    console.log('teste routing');
+    console.log('teste go create profile');
     this.router.navigate(['/createProfile']);
     this.addProfile = false;
+    this.pageTitle = 'Add a profile';
+    this.firstStepForms = true;
   }
 
   goToHome(): void {
     console.log('Teste go home');
     this.router.navigate(['/home']);
     this.addProfile = true;
+    this.pageTitle = '';
+    this.firstStepForms = false;
   }
 }
