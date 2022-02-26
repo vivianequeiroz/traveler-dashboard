@@ -15,8 +15,7 @@
       </tr>
     </tbody>
   </table>
-  <div *ngIf="errorMessage" class="loading-error">
-    <p>Sorry, there was a problem completing your request.</p>
-    <span>{{ errorMessage }}</span>
-  </div>
+  <app-service-operation-error
+    [errorMessage]="errorMessage"
+  ></app-service-operation-error>
 </div>

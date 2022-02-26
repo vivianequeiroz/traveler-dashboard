@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CityDataService } from '../services/city/city-data.service';
+import { ServiceOperationErrorComponent } from './components/service-operation-error/service-operation-error.component';
 
 @NgModule({
   imports: [
@@ -21,12 +22,14 @@ import { CityDataService } from '../services/city/city-data.service';
     NavBarComponent,
     HeaderFormsComponent,
     BasicDataFormsComponent,
+    ServiceOperationErrorComponent,
   ],
   exports: [
     SideBarComponent,
     NavBarComponent,
     HeaderFormsComponent,
     BasicDataFormsComponent,
+    ServiceOperationErrorComponent,
   ],
 })
 export class SharedModule {}
