@@ -1,32 +1,23 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
+import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { City } from 'src/app/models/City';
 import { CityService } from 'src/app/services/city/city-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
-  cities$!: Observable<City[]> | undefined;
+export class HomeComponent {
   @Output() errorMessage!: string;
 
   constructor(private cityService: CityService) {}
 
-  ngOnInit(): void {
-    this.listAllCities();
-  }
-
-  listAllCities(): void {
-    console.log(this.cities$);
-    this.cities$ = this.cityService.listAll().pipe(
-      catchError((err) => {
-        this.errorMessage = err;
-        return EMPTY; // an empty observable
-      })
-    );
-    console.log(this.cities$);
-  }
+  cities$ = this.cityService.cities$.pipe(
+    catchError((err) => {
+      this.errorMessage = err;
+      return EMPTY;
+    })
+  );
 }

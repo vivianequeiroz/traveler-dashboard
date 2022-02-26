@@ -13,9 +13,14 @@ import {
   providedIn: 'root',
 })
 export class CityService {
-  private citiesUrl = 'api/citie';
+  private citiesUrl = 'api/cities';
 
   constructor(private http: HttpClient) {}
+
+  cities$ = this.http.get<City[]>(this.citiesUrl).pipe(
+    tap((cities: City[]) => console.log(JSON.stringify(cities))),
+    catchError(this.handleError)
+  );
 
   create(city: City): Observable<City> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
@@ -27,13 +32,13 @@ export class CityService {
     );
   }
 
-  listAll(): Observable<City[]> {
-    console.log('listing all cities service');
-    return this.http.get<City[]>(this.citiesUrl).pipe(
-      tap((cities: City[]) => console.log(JSON.stringify(cities))),
-      catchError(this.handleError)
-    );
-  }
+  // listAll(): Observable<City[]> {
+  //   console.log('listing all cities service');
+  //   return this.http.get<City[]>(this.citiesUrl).pipe(
+  //     tap((cities: City[]) => console.log(JSON.stringify(cities))),
+  //     catchError(this.handleError)
+  //   );
+  // }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
