@@ -1,3 +1,18 @@
 <div class="home-container">
-  <p>home works!</p>
+  <table class="card-container" *ngIf="cities$ | async as cities">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let city of cities">
+        <td>{{ city.name }}</td>
+        <td>{{ city.photo }}</td>
+        <td>{{ city.description }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
