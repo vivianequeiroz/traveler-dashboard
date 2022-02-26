@@ -13,7 +13,7 @@ import {
   providedIn: 'root',
 })
 export class CityService {
-  private citiesUrl = 'api/cities';
+  private citiesUrl = 'api/citie';
 
   constructor(private http: HttpClient) {}
 
@@ -42,7 +42,6 @@ export class CityService {
     } else {
       errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
     }
-    console.error(errorMessage);
-    return throwError(() => console.log(errorMessage));
+    return throwError(errorMessage);
   }
 }

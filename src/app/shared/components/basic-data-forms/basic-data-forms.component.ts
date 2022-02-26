@@ -1,8 +1,9 @@
 import { CityService } from '../../../services/city/city-service.service';
 import { Component, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { EMPTY, Subscription } from 'rxjs';
 import { City } from 'src/app/models/City';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-basic-data-forms',
@@ -17,6 +18,7 @@ export class BasicDataFormsComponent implements OnInit, OnDestroy {
   @Input() targetEntityType!: City;
   @Input() formsTitle: string = 'Add a profile';
   @Output() isCreateForm: boolean = true;
+  @Output() errorMessage!: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -47,6 +49,12 @@ export class BasicDataFormsComponent implements OnInit, OnDestroy {
     if (isCityForms) {
       this.subscription = this.cityService
         .create(targetEntityToSave)
+        .pipe(
+          catchError((err) => {
+            this.errorMessage = err;
+            return EMPTY; // an empty observable
+          })
+        )
         .subscribe((response) => console.log(response));
       console.log(targetEntityToSave);
     }
