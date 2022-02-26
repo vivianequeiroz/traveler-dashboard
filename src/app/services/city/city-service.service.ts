@@ -14,14 +14,11 @@ import {
 })
 export class CityService {
   private citiesUrl = 'api/cities';
-  cities: City[] = [];
 
   constructor(private http: HttpClient) {}
 
-  createCity(city: City): Observable<City> {
+  create(city: City): Observable<City> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    city.id = '';
-    this.cities.push(city);
     console.log(city, 'service');
 
     return this.http.post<City>(this.citiesUrl, city, { headers }).pipe(
