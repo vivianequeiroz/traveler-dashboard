@@ -1,0 +1,75 @@
+<div class="basic-data-forms-container">
+  <div class="wrapper">
+    <form [formGroup]="basicDataForms">
+      <h2>Basic data</h2>
+      <div class="separator"></div>
+
+      <div class="input-container">
+        <label class="label">Name</label>
+        <div class="name-input">
+          <input
+            class="form-control"
+            id="name"
+            type="text"
+            formControlName="name"
+          />
+          <!-- <span class="invalid-feedback">
+            {{ displayMessage.cityName }}
+          </span> -->
+        </div>
+      </div>
+
+      <div class="input-container">
+        <label class="label">Photo</label>
+        <div class="photo-input">
+          <input
+            class="form-control"
+            id="photo"
+            type="file"
+            accept="image/*"
+            aria-label="Add a photo"
+            formControlName="photo"
+          />
+        </div>
+        <!-- <span class="invalid-feedback">
+            {{ displayMessage.cityName }}
+          </span> -->
+      </div>
+
+      <div class="input-container">
+        <label class="label">Description</label>
+        <div class="name-container">
+          <input
+            class="form-control"
+            id="description"
+            type="text"
+            formControlName="description"
+          />
+          <div class="max-length">
+            <p>Max 320 characters.</p>
+          </div>
+          <!-- <span class="invalid-feedback">
+            {{ displayMessage.cityName }}
+          </span> -->
+        </div>
+      </div>
+
+      <div class="wrapper-footer-forms">
+        <div class="cautious-container">
+          <div class="alert-icon">
+            <img src="../../../assets/svgs/alert.svg" alt="Alert red icon" />
+          </div>
+          <div class="alert-message">Be careful fulfilling information.</div>
+        </div>
+        <div *ngIf="isCreateForm" class="next-btn-container">
+          <button (click)="saveBasicDataForms()" class="next-step">Next</button>
+        </div>
+        <div *ngIf="!isCreateForm" class="save-changes-btn-container">
+          <button (click)="saveBasicDataForms()" class="save-change">
+            Save changes
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
