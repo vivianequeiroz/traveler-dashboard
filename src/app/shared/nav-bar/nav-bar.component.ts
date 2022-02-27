@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  @Input() isCitiesPage!: boolean;
+  @Input() isCitiesPage: boolean = true;
   @Input() addProfile: boolean = true;
   @Output() cityProfile: boolean = false;
   @Output() placeProfile: boolean = false;
@@ -24,6 +24,7 @@ export class NavBarComponent implements OnInit {
     this.addProfile = false;
     this.pageTitle = 'Add a profile';
     this.firstStepForms = true;
+    this.isCitiesPage = false;
   }
 
   goToHome(): void {
@@ -32,5 +33,6 @@ export class NavBarComponent implements OnInit {
     this.addProfile = true;
     this.pageTitle = '';
     this.firstStepForms = false;
+    this.isCitiesPage = true;
   }
 }
