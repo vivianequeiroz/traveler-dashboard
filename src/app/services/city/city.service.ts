@@ -18,11 +18,16 @@ export class CityService {
   constructor(private http: HttpClient) {}
 
   cities$ = this.http.get<City[]>(this.citiesUrl).pipe(
-    map(cities => cities.map(city => ({
-      ...city,
-      description: city.description.toUpperCase();
-      searchKey: city.name
-    } as City))),
+    map((cities) =>
+      cities.map(
+        (city) =>
+          ({
+            ...city,
+            description: city.description.toUpperCase(),
+            searchKey: city.name,
+          } as City)
+      )
+    ),
     tap((cities: City[]) => console.log(JSON.stringify(cities))),
     catchError(this.handleError)
   );

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
 import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { CityService } from 'src/app/services/city/city-service.service';
+import { CityService } from 'src/app/services/city/city.service';
 
 @Component({
   selector: 'app-home',

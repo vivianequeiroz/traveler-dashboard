@@ -1,4 +1,4 @@
-import { CityService } from '../../../services/city/city-service.service';
+import { CityService } from '../../../services/city/city.service';
 import { Component, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { EMPTY, Subscription } from 'rxjs';
