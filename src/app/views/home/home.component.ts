@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
-import { EMPTY } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, EMPTY, Subject } from 'rxjs';
+import { catchError, map, startWith } from 'rxjs/operators';
 import { CityService } from 'src/app/services/city/city.service';
 
 @Component({
@@ -11,13 +11,27 @@ import { CityService } from 'src/app/services/city/city.service';
 })
 export class HomeComponent {
   @Output() errorMessage!: string;
+  private citySelectedSubject = new BehaviorSubject<number>(0);
+  citySelectedSubject$ = this.citySelectedSubject.asObservable(); //exposing to other parts of the app in a secure way
 
-  constructor(private cityService: CityService) {}
-
-  cities$ = this.cityService.cities$.pipe(
+  cities$ = combineLatest([
+    this.cityService.cities$,
+    this.citySelectedSubject$,
+  ]).pipe(
+    map(([cities, selectedCityId]) =>
+      cities.filter((city) =>
+        selectedCityId ? city.id === selectedCityId : true
+      )
+    ),
     catchError((err) => {
       this.errorMessage = err;
       return EMPTY;
     })
   );
+
+  constructor(private cityService: CityService) {}
+
+  onSelected(cityById: number) {
+    this.citySelectedSubject.next(cityById);
+  }
 }

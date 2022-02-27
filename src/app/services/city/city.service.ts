@@ -23,7 +23,7 @@ export class CityService {
         (city) =>
           ({
             ...city,
-            description: city.description.toUpperCase(),
+            description: city.description.toLowerCase(),
             searchKey: city.name,
           } as City)
       )
