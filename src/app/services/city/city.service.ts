@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { City } from 'src/app/models/City';
 
 import {
@@ -18,6 +18,11 @@ export class CityService {
   constructor(private http: HttpClient) {}
 
   cities$ = this.http.get<City[]>(this.citiesUrl).pipe(
+    map(cities => cities.map(city => ({
+      ...city,
+      description: city.description.toUpperCase();
+      searchKey: city.name
+    } as City))),
     tap((cities: City[]) => console.log(JSON.stringify(cities))),
     catchError(this.handleError)
   );
