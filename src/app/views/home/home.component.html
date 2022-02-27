@@ -1,4 +1,14 @@
 <div class="home-container">
+  <div class="select-city-container">
+    <select name="select-city" id="select-city">
+      <option value="0" (change)="onSelected($any($event.target).value)">
+        Display all
+      </option>
+      <option *ngFor="let city of cities$ | async" [value]="city.id">
+        {{ city.name }}
+      </option>
+    </select>
+  </div>
   <table class="card-container" *ngIf="cities$ | async as cities">
     <thead>
       <tr>
