@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
-import { BehaviorSubject, combineLatest, EMPTY, Subject } from 'rxjs';
-import { catchError, map, startWith } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, EMPTY } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { CityService } from 'src/app/services/city/city.service';
 
 @Component({
