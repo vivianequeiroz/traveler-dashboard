@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, combineLatest, BehaviorSubject } from 'rxjs';
 import { tap, catchError, map } from 'rxjs/operators';
 import { City } from 'src/app/models/City';
 
@@ -14,21 +14,22 @@ import {
 })
 export class CityService {
   private citiesUrl = 'api/cities';
+  private citySelectedSubject = new BehaviorSubject<number>(0);
+  citySelectedSubject$ = this.citySelectedSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
   cities$ = this.http.get<City[]>(this.citiesUrl).pipe(
-    map((cities) =>
-      cities.map(
-        (city) =>
-          ({
-            ...city,
-            name: city.name.toLowerCase(),
-          } as City)
-      )
-    ),
     tap((cities: City[]) => console.log(JSON.stringify(cities))),
     catchError(this.handleError)
+  );
+
+  selectedCity$ = combineLatest([this.cities$, this.citySelectedSubject$]).pipe(
+    map(
+      ([cities, selectedCityId]) =>
+        cities.find((city) => city.id === selectedCityId),
+      tap(() => console.log('cidades!'))
+    )
   );
 
   create(city: City): Observable<City> {
@@ -48,6 +49,13 @@ export class CityService {
   //     catchError(this.handleError)
   //   );
   // }
+
+  onSelectedCity(cityById: number) {
+    console.log('help jesus');
+
+    this.citySelectedSubject.next(+cityById);
+    console.log(this.selectedCity$);
+  }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
