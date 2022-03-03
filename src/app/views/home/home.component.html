@@ -27,7 +27,7 @@
       </tbody>
     </table>
   </div>
-  <table class="card-container" *ngIf="cities$ | async as cities">
+  <table class="card-container1" *ngIf="cities$ | async as cities">
     <thead>
       <tr>
         <th>Name</th>
@@ -43,6 +43,33 @@
       </tr>
     </tbody>
   </table>
+  <div class="card-container">
+    <div class="nav main-container">
+      <ul class="nav-options">
+        <li>
+          <div class="edit-delete-container">
+            <div class="edit">
+              <button class="edit">
+                <img src="../../../assets/svgs/edit.svg" alt="Edit" />
+              </button>
+            </div>
+            <div class="delete">
+              <button class="delete">
+                <img src="../../../assets/svgs/delete.svg" alt="Delete" />
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="city-photo">
+      <img src="../../../assets/imgs/city-img.png" alt="City photo" />
+    </div>
+    <div class="city-description">
+      <p class="city-name">City</p>
+      <p class="city-locals">City description</p>
+    </div>
+  </div>
   <app-service-operation-error
     [errorMessage]="errorMessage"
   ></app-service-operation-error>
