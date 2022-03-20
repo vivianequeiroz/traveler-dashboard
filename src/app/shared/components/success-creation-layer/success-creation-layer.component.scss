@@ -1,0 +1,39 @@
+.main-cointainer {
+  background: #123952;
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 9999;
+
+  .propagation-effect,
+  .check-icon,
+  .message {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .check-icon {
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    background-color: #51b853;
+
+    img {
+      margin-top: 1.75rem;
+    }
+  }
+
+  .message {
+    margin-top: 10rem;
+    width: 17rem;
+    font-size: 3.375rem;
+    line-height: 4rem;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+  }
+}

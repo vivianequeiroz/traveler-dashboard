@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CityDataService } from '../services/city/city-data.service';
 import { ServiceOperationErrorComponent } from './components/service-operation-error/service-operation-error.component';
+import { SuccessCreationLayerComponent } from './components/success-creation-layer/success-creation-layer.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ServiceOperationErrorComponent } from './components/service-operation-e
     HeaderFormsComponent,
     BasicDataFormsComponent,
     ServiceOperationErrorComponent,
+    SuccessCreationLayerComponent,
   ],
   exports: [
     SideBarComponent,
@@ -30,6 +32,7 @@ import { ServiceOperationErrorComponent } from './components/service-operation-e
     HeaderFormsComponent,
     BasicDataFormsComponent,
     ServiceOperationErrorComponent,
+    SuccessCreationLayerComponent,
   ],
 })
 export class SharedModule {}
