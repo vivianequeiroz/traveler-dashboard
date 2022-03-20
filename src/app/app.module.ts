@@ -6,7 +6,6 @@ import { SharedModule } from './shared/shared.module';
 import { ViewsModule } from './views/views.module';
 import { HeaderFormsComponent } from './shared/components/header-forms/header-forms.component';
 import { AppComponent } from './app.component';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule, ViewsModule],
