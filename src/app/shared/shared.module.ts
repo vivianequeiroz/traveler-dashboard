@@ -10,6 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CityDataService } from '../services/city/city-data.service';
 import { ServiceOperationErrorComponent } from './components/service-operation-error/service-operation-error.component';
 import { SuccessCreationLayerComponent } from './components/success-creation-layer/success-creation-layer.component';
+import { DeleteLayerComponent } from './components/delete-layer/delete-layer.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { SuccessCreationLayerComponent } from './components/success-creation-lay
     BasicDataFormsComponent,
     ServiceOperationErrorComponent,
     SuccessCreationLayerComponent,
+    DeleteLayerComponent,
   ],
   exports: [
     SideBarComponent,
