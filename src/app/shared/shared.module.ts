@@ -10,7 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CityDataService } from '../services/city/city-data.service';
 import { ServiceOperationErrorComponent } from './components/service-operation-error/service-operation-error.component';
 import { SuccessCreationLayerComponent } from './components/success-creation-layer/success-creation-layer.component';
-import { DeleteLayerComponent } from './components/delete-layer/delete-layer.component';
+import { DeleteCreationLayerComponent } from './components/delete-layer/delete-creation-layer.component';
 
 @NgModule({
   imports: [
@@ -26,7 +26,7 @@ import { DeleteLayerComponent } from './components/delete-layer/delete-layer.com
     BasicDataFormsComponent,
     ServiceOperationErrorComponent,
     SuccessCreationLayerComponent,
-    DeleteLayerComponent,
+    DeleteCreationLayerComponent,
   ],
   exports: [
     SideBarComponent,
@@ -35,6 +35,7 @@ import { DeleteLayerComponent } from './components/delete-layer/delete-layer.com
     BasicDataFormsComponent,
     ServiceOperationErrorComponent,
     SuccessCreationLayerComponent,
+    DeleteCreationLayerComponent,
   ],
 })
 export class SharedModule {}
