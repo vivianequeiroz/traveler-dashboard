@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteLayerComponent } from './delete-layer.component';
+import { DeleteCreationLayerComponent } from './delete-creation-layer.component';
 
-describe('DeleteLayerComponent', () => {
-  let component: DeleteLayerComponent;
-  let fixture: ComponentFixture<DeleteLayerComponent>;
+describe('DeleteCreationLayerComponent', () => {
+  let component: DeleteCreationLayerComponent;
+  let fixture: ComponentFixture<DeleteCreationLayerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteLayerComponent ]
-    })
-    .compileComponents();
+      declarations: [DeleteCreationLayerComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteLayerComponent);
+    fixture = TestBed.createComponent(DeleteCreationLayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
