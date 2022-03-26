@@ -58,6 +58,7 @@ export class BasicDataFormsComponent implements OnInit, OnDestroy {
         .subscribe((response) => console.log(response));
       console.log(targetEntityToSave);
     }
+    this.cityService.onSaveSuccess();
   }
 
   ngOnDestroy(): void {

@@ -8,6 +8,7 @@ import {
   HttpErrorResponse,
   HttpHeaders,
 } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class CityService {
   private citySelectedSubject = new BehaviorSubject<number>(0);
   citySelectedSubject$ = this.citySelectedSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   cities$ = this.http.get<City[]>(this.citiesUrl).pipe(
     tap((cities: City[]) => console.log(JSON.stringify(cities))),
@@ -55,6 +56,10 @@ export class CityService {
 
     this.citySelectedSubject.next(+cityById);
     console.log(this.selectedCity$);
+  }
+
+  onSaveSuccess() {
+    this.router.navigate(['successLayer']);
   }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
