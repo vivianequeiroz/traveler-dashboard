@@ -14,6 +14,7 @@ export class BasicDataFormsComponent implements OnInit, OnDestroy {
   basicDataForms!: FormGroup;
   city!: City;
   subscription!: Subscription;
+  showSuccessLayer: boolean = false;
 
   @Input() targetEntityType!: City;
   @Input() formsTitle: string = 'Add a profile';
@@ -52,13 +53,14 @@ export class BasicDataFormsComponent implements OnInit, OnDestroy {
         .pipe(
           catchError((err) => {
             this.errorMessage = err;
+            this.showSuccessLayer = false;
             return EMPTY; // an empty observable
           })
         )
         .subscribe((response) => console.log(response));
+      this.showSuccessLayer = true;
       console.log(targetEntityToSave);
     }
-    this.cityService.onSaveSuccess();
   }
 
   ngOnDestroy(): void {
