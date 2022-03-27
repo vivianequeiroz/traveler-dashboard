@@ -1,10 +1,12 @@
 .main-cointainer {
   background: #123952;
   opacity: 0.95;
-  height: 160vh;
+  height: 136rem;
   z-index: 9999;
-  position: relative;
+  position: fixed;
   margin-top: -160vh;
+  width: 130vw;
+  margin-left: -60rem;
 
   .propagation-effect,
   .check-icon,
@@ -34,6 +36,12 @@
     line-height: 4rem;
     font-weight: 500;
     text-align: center;
+    color: #ffffff;
+  }
+
+  .close-layer {
+    width: 4rem;
+    height: 4rem;
     color: #ffffff;
   }
 }
