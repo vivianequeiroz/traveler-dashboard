@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-success-creation-layer',
@@ -6,7 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./success-creation-layer.component.scss'],
 })
 export class SuccessCreationLayerComponent implements OnInit {
-  constructor() {}
+  @Input() showSuccessLayer!: boolean;
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.showSuccessLayer) {
+      setTimeout(() => {
+        this.showSuccessLayer = false;
+        this.router.navigate(['/home']);
+      }, 1000);
+    }
+  }
 }
