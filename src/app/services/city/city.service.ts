@@ -58,10 +58,6 @@ export class CityService {
     console.log(this.selectedCity$);
   }
 
-  onSaveSuccess() {
-    this.router.navigate(['successLayer']);
-  }
-
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
